@@ -1,0 +1,23 @@
+E-3906 CONCEPT — V3 CIC / DECISÃO OPERACIONAL
+
+Mudança principal:
+O treinamento deixou de ser centrado em sequência e passou a trabalhar:
+ESTADO → INTERPRETAÇÃO → DECISÃO → CONFIRMAÇÃO → PRÓXIMA ETAPA
+
+Modos:
+1. Visão CIC
+2. Decisão operacional
+3. Tendências
+4. Falhas de alinhamento
+5. Campo × CIC
+6. Avaliação sem dicas
+
+A sequência de referência permanece disponível apenas como consulta.
+
+No GitHub robexter/E-3906-concept:
+- substituir index.html
+- substituir sw.js
+- substituir/adicionar retirada-e3906.html
+
+Depois abrir:
+https://robexter.github.io/E-3906-concept/?v=3
