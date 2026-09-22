@@ -1,0 +1,22 @@
+E-3906 CONCEPT — V4 REFINAMENTO CIC
+
+Refinamentos principais:
+- C3+ não aparece mais subindo na condição inicial; fica como BASE / MONITORAR.
+- alternativas mais plausíveis, reduzindo acerto por eliminação;
+- ordem das alternativas é embaralhada;
+- cada etapa exige duas competências: DECIDIR + CONFIRMAR;
+- avaliação final não exibe a sequência operacional;
+- decisão correta não basta: é obrigatório reconhecer a resposta/condição que fecha o gate;
+- tendências tratadas de forma qualitativa, sem inventar novos limites;
+- conteúdo técnico e valores fornecidos pelo usuário foram preservados.
+
+Fluxo pedagógico:
+ESTADO → INTERPRETAÇÃO → DECISÃO → CONFIRMAÇÃO → AVANÇAR
+
+No GitHub robexter/E-3906-concept:
+1. substituir index.html
+2. substituir sw.js
+3. substituir retirada-e3906.html
+
+Depois abrir:
+https://robexter.github.io/E-3906-concept/?v=4

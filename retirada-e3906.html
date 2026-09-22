@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071018">
-<title>E-3906 • Decisão CIC • Retirada para Manutenção</title>
+<title>E-3906 • Decisão CIC • Retirada para Manutenção • V4</title>
 <style>
 :root{--bg:#06111b;--panel:#0c1c29;--panel2:#11293a;--line:#31536a;--txt:#eef7ff;--muted:#9eb4c5;--blue:#69c9ff;--green:#78df89;--yellow:#ffd267;--red:#ff8f8f;--orange:#ffb66e}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top,#16344a,#07131e 45%,#04090e);color:var(--txt)}
-body{padding:12px}.app{max-width:1360px;margin:auto;display:grid;gap:13px}
+body{padding:12px}.app{max-width:1380px;margin:auto;display:grid;gap:13px}
 .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 36px #0006}
-.hero{padding:18px;display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.hero{padding:18px;display:grid;grid-template-columns:1.18fr .82fr;gap:14px}
 .kicker{display:inline-flex;border:1px solid #80662e;background:#2a210c;color:#ffe7a4;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;letter-spacing:.08em}
 h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--muted);line-height:1.5}
 .hero-side{border:1px solid #355a73;background:#081923;border-radius:17px;padding:13px}
@@ -22,7 +22,7 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 .view{display:none;padding:17px}.view.active{display:block}
 .grid2{display:grid;grid-template-columns:1.08fr .92fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .box{border:1px solid #315169;background:#081923;border-radius:17px;padding:14px}.box h2,.box h3{margin:0 0 8px}.box p,.box li{line-height:1.5}
-.subtle{color:var(--muted);font-size:12px}
+.subtle{color:var(--muted);font-size:12px}.micro{font-size:10px;color:var(--muted)}
 .btn{border:1px solid #3b6079;background:#102838;color:#fff;border-radius:11px;padding:9px 11px;font-weight:850;cursor:pointer}.btn.primary{background:#1c5c30;border-color:#5aa36e}.btn.warn{background:#4a3510;border-color:#96732b}.btn:disabled{opacity:.45;cursor:not-allowed}
 .actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
 .dcs{border:1px solid #41627a;background:#06141e;border-radius:17px;padding:13px}
@@ -34,6 +34,7 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 .decision-question{font-size:18px;font-weight:900;line-height:1.4;margin:8px 0 12px}
 .options{display:grid;gap:7px}.options button{text-align:left}.feedback{display:none;margin-top:10px;border-radius:11px;padding:10px;line-height:1.45}.feedback.show{display:block}.feedback.yes{border:1px solid #4a9159;background:#12351c}.feedback.no{border:1px solid #944848;background:#381717}
 .reason-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}.reason{border:1px solid #2d4d63;background:#071822;border-radius:11px;padding:9px}.reason small{color:var(--muted);display:block}.reason b{font-size:12px}
+.gate{border:1px solid #3c6079;background:#081925;border-radius:15px;padding:12px;margin-top:10px}.gate-title{display:flex;gap:8px;align-items:center;font-weight:900}.gate-num{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#12344a;border:1px solid #47708b}
 .trend-panel{display:grid;grid-template-columns:1fr 1fr;gap:10px}.trend-card{border:1px solid #31536a;background:#071824;border-radius:14px;padding:11px}.trend-card b{display:block}.spark{height:70px;margin-top:8px}.spark svg{width:100%;height:100%}
 .scenario{border:1px solid #315169;background:#081923;border-radius:15px;padding:13px;margin:10px 0}.scenario h3{margin:0 0 7px}.scenario button{display:block;width:100%;text-align:left;margin-top:6px}.scenario .result{display:none;margin-top:8px;padding:9px;border-radius:10px}.scenario.answered .result{display:block}.scenario.correct .result{background:#12351c;border:1px solid #428a55}.scenario.incorrect .result{background:#351718;border:1px solid #8f4949}
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.role{border:1px solid #31536a;background:#071824;border-radius:15px;padding:13px}.role h3{margin:0 0 8px}.role ul{padding-left:19px}
@@ -41,6 +42,9 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 .score{border:1px solid #42627a;background:#0a1c29;border-radius:14px;padding:12px;margin-top:10px}.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.score-grid div{border:1px solid #2e4d62;background:#071720;border-radius:11px;padding:9px;text-align:center}.score-grid b{display:block;font-size:20px}
 .note{border:1px solid #685a26;background:#241f0d;color:#ffebaa;border-radius:12px;padding:10px;font-size:12px;line-height:1.45;margin-top:11px}
 .ref{border:1px dashed #45657a;background:#07141e;border-radius:14px;padding:12px;margin-top:12px}.ref summary{cursor:pointer;font-weight:900}.ref ol{padding-left:21px}
+.hidden{display:none!important}.phase-label{font-size:10px;font-weight:900;letter-spacing:.08em;color:#98c7e0;margin-bottom:5px}
+.confirm-box{border:1px solid #5d5130;background:#1f1d10;border-radius:13px;padding:11px;margin-top:10px}
+.final-status{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pill{border:1px solid #375970;background:#0a1f2c;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900}
 @media(max-width:950px){.hero,.grid2,.role-grid,.trend-panel{grid-template-columns:1fr}.reason-grid{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){body{padding:6px}.view{padding:10px}.inst-grid,.grid3,.score-grid,.reason-grid{grid-template-columns:1fr}.tab{font-size:11px}}
 </style>
@@ -49,32 +53,32 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 <div class="app">
 <section class="card hero">
   <div>
-    <span class="kicker">🖥️ E-3906 • TREINAMENTO CIC • V3</span>
+    <span class="kicker">🖥️ E-3906 • TREINAMENTO CIC • V4 REFINAMENTO</span>
     <h1>Retirada da E-3906 para Manutenção</h1>
-    <p>O foco não é decorar uma lista de válvulas. Você recebe o estado do processo, interpreta tendências, toma uma decisão, confirma a resposta esperada e decide se a manobra pode avançar.</p>
-    <a class="navback" href="./index.html?v=3">← Voltar para E-3906 Concept</a>
+    <p>O operador não recebe uma receita. A cada etapa ele precisa identificar o estado do sistema, escolher a ação mais coerente e depois definir <b>o que deve ser confirmado</b> antes de autorizar a próxima fase.</p>
+    <a class="navback" href="./index.html?v=4">← Voltar para E-3906 Concept</a>
   </div>
   <div class="hero-side">
     <b>Modelo mental do operador</b>
-    <div class="memory"><span>Estado</span> → interpretar → decidir → confirmar → avançar</div>
-    <p class="subtle">Sequência de referência: Bypass → Isolar → Drenar → Flare → Purga → Steam-out → Medir → Liberar.</p>
+    <div class="memory"><span>Estado</span> → interpretar → decidir → <span>confirmar</span> → avançar</div>
+    <p class="subtle">A sequência fica disponível como referência, mas não é mostrada durante a avaliação final.</p>
   </div>
 </section>
 
 <section class="card">
   <div class="tabs">
     <button class="tab active" data-tab="vision">1. Visão CIC</button>
-    <button class="tab" data-tab="decision">2. Decisão operacional</button>
+    <button class="tab" data-tab="decision">2. Decisão + confirmação</button>
     <button class="tab" data-tab="trends">3. Tendências</button>
     <button class="tab" data-tab="fail">4. Falhas de alinhamento</button>
     <button class="tab" data-tab="roles">5. Campo × CIC</button>
-    <button class="tab" data-tab="final">6. Avaliação sem dicas</button>
+    <button class="tab" data-tab="final">6. Avaliação final</button>
   </div>
 
   <div class="view active" data-view="vision">
     <div class="grid2">
       <div class="dcs">
-        <div class="dcs-head"><b>E-3906 — RETIRADA PARA MANUTENÇÃO</b><span class="badge">VISÃO CIC</span></div>
+        <div class="dcs-head"><b>E-3906 — CONDIÇÃO INICIAL</b><span class="badge">VISÃO CIC</span></div>
         <div class="inst-grid">
           <div class="inst"><small>MCV-39394</small><b class="bad">FECHADA</b><div class="trend">Bypass do gás</div></div>
           <div class="inst"><small>MCV-39392</small><b class="ok">ABERTA</b><div class="trend">Entrada de carga</div></div>
@@ -83,26 +87,29 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
           <div class="inst"><small>J-3907 A/B</small><b class="ok">EM SERVIÇO</b><div class="trend">Circulação de óleo pobre</div></div>
           <div class="inst"><small>NÍVEL E-3906</small><b class="info">NORMAL</b><div class="trend">Inventário presente</div></div>
           <div class="inst"><small>PRESSÃO E-3906</small><b class="info">PROCESSO</b><div class="trend">Ainda pressurizada</div></div>
-          <div class="inst"><small>C3+ GÁS COMB.</small><b class="warnc">TENDÊNCIA ↑</b><div class="trend">Impacto esperado após retirada</div></div>
-          <div class="inst"><small>OBJETIVO</small><b>MANUTENÇÃO</b><div class="trend">Sem atalhos de segurança</div></div>
+          <div class="inst"><small>C3+ GÁS COMB.</small><b class="info">BASE / MONITORAR</b><div class="trend">Aumento é impacto esperado após retirada</div></div>
+          <div class="inst"><small>OBJETIVO</small><b>MANUTENÇÃO</b><div class="trend">Retirada controlada</div></div>
         </div>
+
         <div class="decision-card">
-          <div class="subtle">SITUAÇÃO</div>
-          <div class="decision-question">A operação solicitou retirar a E-3906. Qual é a primeira condição que você precisa estabelecer antes de fechar o caminho normal do gás?</div>
-          <button class="btn primary" id="visionAnswer">Responder como operador CIC</button>
-          <div id="visionFeedback" class="feedback yes">Abrir a <b>MCV-39394</b> para estabelecer o contorno do gás. Só depois o isolamento do caminho normal pode prosseguir. O raciocínio é evitar represamento do sistema e possível atuação de PSV´s.</div>
+          <div class="phase-label">DECISÃO INICIAL</div>
+          <div class="decision-question">Foi solicitada a retirada da E-3906. Qual decisão deve ser tomada antes de eliminar o caminho normal do gás?</div>
+          <div class="options">
+            <button class="btn" onclick="visionAns(0)">Abrir MCV-39394, confirmar o caminho de contorno e só depois iniciar o isolamento da torre.</button>
+            <button class="btn" onclick="visionAns(1)">Fechar MCV-39392 e MCV-39393 e usar a elevação de pressão como indicação de que o bypass precisa ser aberto.</button>
+            <button class="btn" onclick="visionAns(2)">Parar J-3907 A/B e reduzir o nível primeiro, mantendo o gás pela E-3906 até concluir a drenagem.</button>
+          </div>
+          <div id="visionFeedback" class="feedback"></div>
         </div>
       </div>
 
       <div class="box">
-        <h3>5 perguntas mentais antes de agir</h3>
-        <div class="reason-grid" style="grid-template-columns:1fr">
-          <div class="reason"><small>1. O que mudou?</small><b>Foi solicitada retirada da E-3906.</b></div>
-          <div class="reason"><small>2. Qual risco existe?</small><b>Bloquear o caminho de gás sem contorno pode gerar represamento.</b></div>
-          <div class="reason"><small>3. Qual ação vem agora?</small><b>Estabelecer bypass pela MCV-39394.</b></div>
-          <div class="reason"><small>4. O que confirmar?</small><b>Coerência de pressões/fluxo e condição do caminho alternativo.</b></div>
-          <div class="reason"><small>5. Posso avançar?</small><b>Somente após confirmar a nova condição do sistema.</b></div>
-        </div>
+        <h3>Gate de decisão do CIC</h3>
+        <div class="gate"><div class="gate-title"><span class="gate-num">1</span> O que mudou?</div><p>Foi solicitada a retirada da E-3906.</p></div>
+        <div class="gate"><div class="gate-title"><span class="gate-num">2</span> Qual risco precisa ser controlado?</div><p>Fechar o caminho normal sem contorno pode provocar represamento e atuação de PSV´s.</p></div>
+        <div class="gate"><div class="gate-title"><span class="gate-num">3</span> Qual ação muda o estado do sistema?</div><p>Estabelecer o bypass do gás pela MCV-39394.</p></div>
+        <div class="gate"><div class="gate-title"><span class="gate-num">4</span> O que preciso confirmar?</div><p>Que o caminho alternativo está estabelecido e que as tendências de pressão permanecem coerentes antes de isolar a torre.</p></div>
+        <div class="gate"><div class="gate-title"><span class="gate-num">5</span> Posso avançar?</div><p>Somente depois da confirmação.</p></div>
         <div class="note">Impacto informado da retirada: aumento de C3+ no gás combustível. Caso o J-3902 ainda utilizasse gás combustível na selagem, a condição informada exige mudança para N₂.</div>
       </div>
     </div>
@@ -126,12 +133,20 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
   <div class="view" data-view="decision">
     <div class="grid2">
       <div class="dcs">
-        <div class="dcs-head"><b id="caseTitle">DECISÃO OPERACIONAL</b><span id="caseBadge" class="badge">CENÁRIO 1</span></div>
+        <div class="dcs-head"><b id="caseTitle">DECISÃO OPERACIONAL</b><span id="caseBadge" class="badge">CENÁRIO</span></div>
         <div id="caseState" class="inst-grid"></div>
       </div>
       <div class="box">
+        <div id="casePhase" class="phase-label"></div>
         <div id="caseQuestion" class="decision-question"></div>
         <div id="caseOptions" class="options"></div>
+
+        <div id="confirmStage" class="confirm-box hidden">
+          <div class="phase-label">CONFIRMAÇÃO APÓS A AÇÃO</div>
+          <div id="confirmQuestion" class="decision-question" style="font-size:16px"></div>
+          <div id="confirmOptions" class="options"></div>
+        </div>
+
         <div id="caseFeedback" class="feedback"></div>
         <div class="actions">
           <button id="nextCase" class="btn primary" disabled>Próximo cenário →</button>
@@ -144,17 +159,16 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 
   <div class="view" data-view="trends">
     <div class="box">
-      <h2>Tendências — interpretação antes da ação</h2>
-      <p>Os gráficos são qualitativos. O objetivo é reconhecer coerência entre a manobra e a resposta do sistema, sem inventar limites de processo que não foram fornecidos.</p>
-      <div class="trend-panel" id="trendPanel"></div>
-      <div id="trendQuestion" class="decision-card"></div>
+      <h2>Tendências — o valor está no conjunto, não em um único instrumento</h2>
+      <p>Os cenários abaixo são qualitativos. Nenhum limite novo foi criado. O operador deve relacionar tendência, posição das válvulas e fase da manobra.</p>
+      <div id="trendCases"></div>
     </div>
   </div>
 
   <div class="view" data-view="fail">
     <div class="box">
       <h2>Falhas de alinhamento</h2>
-      <p>Você recebe a condição do sistema e decide se a manobra pode avançar ou deve ser interrompida para correção.</p>
+      <p>As alternativas foram refinadas para exigir interpretação do estado do processo, não apenas reconhecer uma frase obviamente errada.</p>
       <div id="failureList"></div>
     </div>
   </div>
@@ -162,20 +176,20 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
   <div class="view" data-view="roles">
     <div class="role-grid">
       <div class="role">
-        <h3>🖥️ CIC — foco da decisão</h3>
+        <h3>🖥️ CIC — decidir e validar</h3>
         <ul>
           <li>Interpretar pressão, nível, estados de MCV/FFV e condição das J-3907.</li>
-          <li>Confirmar que o bypass foi estabelecido antes do isolamento do caminho normal.</li>
-          <li>Acompanhar redução de inventário e coerência da despressurização.</li>
-          <li>Reconhecer aumento de C3+ no gás combustível como impacto da retirada.</li>
+          <li>Estabelecer o bypass e confirmar a resposta do sistema antes do isolamento.</li>
+          <li>Não avançar apenas porque um comando foi enviado: confirmar a mudança de estado esperada.</li>
+          <li>Reconhecer aumento de C3+ no gás combustível como impacto esperado após retirada, sem confundi-lo automaticamente com falha do bypass.</li>
+          <li>Coordenar cada transição de fase com confirmação de campo quando aplicável.</li>
           <li>Não tratar 24 h de steam-out como liberação automática.</li>
-          <li>Coordenar com campo antes de avançar entre fases.</li>
         </ul>
       </div>
       <div class="role">
-        <h3>🧰 Campo — confirmação física</h3>
+        <h3>🧰 Campo — confirmar condição física</h3>
         <ul>
-          <li>Confirmar posições físicas, bloqueios e condições locais.</li>
+          <li>Confirmar posições físicas e bloqueios solicitados.</li>
           <li>Instalar/interligar dispositivo do vent de 1½" ao flare conforme procedimento.</li>
           <li>Executar drenagens e bloqueios locais.</li>
           <li>Executar purga química conforme procedimento específico.</li>
@@ -184,22 +198,35 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
         </ul>
       </div>
     </div>
-    <div class="note">A divisão CIC/campo nesta tela é pedagógica. A responsabilidade real segue o procedimento, PT/AR, bloqueios e a organização operacional vigente.</div>
+    <div class="note">A divisão CIC/campo é pedagógica. A responsabilidade real segue procedimento, PT/AR, bloqueios e organização operacional vigente.</div>
   </div>
 
   <div class="view" data-view="final">
     <div class="grid2">
       <div>
         <div class="dcs">
-          <div class="dcs-head"><b>AVALIAÇÃO FINAL — SEM DICAS</b><span class="badge">SIMULADOR</span></div>
+          <div class="dcs-head"><b>AVALIAÇÃO FINAL — SEM SEQUÊNCIA EXPOSTA</b><span class="badge">SIMULADOR CIC</span></div>
           <div id="simState" class="inst-grid"></div>
         </div>
-        <div class="timeline" id="simTimeline"></div>
+        <div class="final-status">
+          <span class="pill" id="simStagePill">Etapa 1</span>
+          <span class="pill" id="simGatePill">AGUARDANDO DECISÃO</span>
+        </div>
       </div>
       <div class="box">
         <h2 id="simTitle">Conduza a retirada</h2>
-        <p id="simPrompt">O objetivo é retirar a E-3906 para manutenção. Selecione a próxima decisão a partir do estado atual.</p>
-        <div id="simActions" class="options"></div>
+        <p id="simPrompt">Selecione a próxima decisão a partir do estado atual.</p>
+
+        <div id="simActionBlock">
+          <div class="phase-label">DECISÃO</div>
+          <div id="simActions" class="options"></div>
+        </div>
+
+        <div id="simConfirmBlock" class="confirm-box hidden">
+          <div class="phase-label">O QUE CONFIRMAR ANTES DE AVANÇAR?</div>
+          <div id="simConfirm" class="options"></div>
+        </div>
+
         <div id="simFeedback" class="feedback"></div>
         <div id="simScore" class="score"></div>
         <div class="actions"><button id="resetSim" class="btn">Reiniciar avaliação</button></div>
@@ -212,100 +239,368 @@ h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--
 <script>
 const tabs=[...document.querySelectorAll('.tab')],views=[...document.querySelectorAll('.view')];
 tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('active'));views.forEach(v=>v.classList.remove('active'));t.classList.add('active');document.querySelector(`[data-view="${t.dataset.tab}"]`).classList.add('active')});
-document.getElementById('visionAnswer').onclick=()=>document.getElementById('visionFeedback').classList.add('show');
 
 function inst(tag,state,desc,cls='info'){return `<div class="inst"><small>${tag}</small><b class="${cls}">${state}</b><div class="trend">${desc}</div></div>`}
+function shuffledOptions(items){return items.map((v,i)=>({v,i})).sort(()=>Math.random()-.5)}
+
+window.visionAns=(i)=>{
+ const f=document.getElementById('visionFeedback');
+ if(i===0){f.className='feedback show yes';f.innerHTML='<b>Decisão adequada.</b> O comando deve ser seguido da confirmação de que o caminho alternativo está estabelecido e de que as pressões permanecem coerentes antes de fechar o caminho normal.'}
+ else{f.className='feedback show no';f.innerHTML='<b>A decisão não controla primeiro o risco principal.</b> Antes de eliminar o caminho normal do gás, estabeleça e confirme o caminho de contorno.'}
+};
 
 const cases=[
- {title:'Estabelecer caminho alternativo',state:[['MCV-39394','FECHADA','Bypass','bad'],['MCV-39392','ABERTA','Entrada','ok'],['MCV-39393','ABERTA','Saída','ok'],['Pressão montante','ESTÁVEL','Sem represamento','info']],q:'Qual é a decisão correta antes de iniciar o isolamento do caminho normal?',opts:['Fechar imediatamente MCV-39392 e MCV-39393.','Abrir MCV-39394 e confirmar o contorno antes de isolar a torre.','Parar J-3907 A/B primeiro.'],ok:1,why:'A prioridade é estabelecer o bypass pela MCV-39394. O objetivo informado é evitar represamento e atuação de PSV´s.'},
- {title:'Confirmar isolamento real',state:[['MCV-39394','ABERTA','Bypass','ok'],['MCV-39392','FECHADA','Entrada','ok'],['MCV-39393','FECHADA','Saída','ok'],['FFV-39177','ABERTA','Óleo pobre','bad'],['MCV-39390','ABERTA','Óleo pobre','bad'],['J-3907A','RUN','Bomba','bad']],q:'A E-3906 já pode ser considerada isolada do processo?',opts:['Sim, porque o gás já está em bypass.','Não. O circuito de óleo pobre ainda está alinhado e a J-3907 ainda opera.'],ok:1,why:'O bypass do gás não substitui o isolamento do circuito de óleo pobre. Ainda é necessário fechar FFV-39177/MCV-39390 e parar J-3907 A/B.'},
- {title:'Inventário antes da próxima fase',state:[['Gás','BYPASS','Caminho estabelecido','ok'],['Óleo pobre','ISOLADO','Sem entrada','ok'],['J-3907 A/B','PARADAS','Auxiliar parado','ok'],['Nível E-3906','ELEVADO','Inventário presente','warnc']],q:'O que ainda impede avançar para despressurização/purga?',opts:['Nada; pode avançar.','O inventário líquido deve ser reduzido ao mínimo pela FV-39178.'],ok:1,why:'A redução do nível ao mínimo é uma fase própria antes de avançar.'},
- {title:'Pressão residual',state:[['Nível','MÍNIMO','Inventário reduzido','ok'],['Pressão E-3906','PRESENTE','Ainda pressurizada','warnc'],['Vent → flare','NÃO ALINHADO','Sem caminho de despressurização','bad']],q:'Qual condição precisa ser tratada agora?',opts:['Pressão residual da torre, interligando o vent de 1½" ao flare até equalização.','Abrir V12 e iniciar steam-out imediatamente.'],ok:0,why:'Antes do steam-out, a sequência fornecida prevê despressurização para o flare e purga química.'},
- {title:'Preparação do steam-out',state:[['Purga química','CONCLUÍDA','Etapa anterior','ok'],['Instrumentos','ALINHADOS','Ainda expostos','bad'],['Vent atmosfera','ABERTO','Caminho para atmosfera','ok'],['V12 fundo','FECHADO','Steam-out não iniciado','warnc']],q:'A torre está pronta para iniciar steam-out?',opts:['Sim.','Não. Os instrumentos ainda precisam ser bloqueados e o V12 deve ser condicionado para a etapa.'],ok:1,why:'O procedimento fornecido determina bloquear todos os instrumentos e abrir V12 no fundo durante o steam-out.'},
- {title:'Liberação para manutenção',state:[['Steam-out','24 h','Tempo concluído','ok'],['Medições','NÃO REALIZADAS','Explosividade ainda não verificada','bad'],['Liberação','PENDENTE','Não liberada','warnc']],q:'Como operador CIC, a E-3906 já deve ser considerada liberada?',opts:['Sim, 24 h de steam-out encerram a preparação.','Não. Ainda é necessário realizar as medições e avaliar a explosividade antes da liberação.'],ok:1,why:'Steam-out concluído ≠ equipamento liberado.'}
+ {
+  phase:'BYPASS DO GÁS',
+  title:'Preparar a mudança de caminho',
+  state:[['MCV-39394','FECHADA','Bypass','bad'],['MCV-39392','ABERTA','Entrada da torre','ok'],['MCV-39393','ABERTA','Saída da torre','ok'],['Pressão do sistema','COERENTE','Sem tendência anormal indicada','info']],
+  q:'Qual decisão melhor prepara a retirada da torre sem fechar prematuramente o caminho de gás?',
+  opts:[
+    'Abrir MCV-39394 e manter temporariamente o caminho normal enquanto confirma que o contorno ficou estabelecido.',
+    'Fechar MCV-39392 e manter MCV-39393 aberta, usando a E-3906 como volume de equalização enquanto abre o bypass.',
+    'Reduzir primeiro o óleo pobre e o nível da torre, deixando o gás pela E-3906 até o inventário líquido ficar mínimo.'
+  ],ok:0,
+  cq:'Após comandar a MCV-39394, qual confirmação é mais relevante antes de fechar MCV-39392/39393?',
+  copts:[
+    'Confirmar coerência das pressões e que o caminho alternativo do gás está efetivamente estabelecido.',
+    'Confirmar que o nível da E-3906 começou a cair, pois isso prova que o bypass do gás abriu.',
+    'Confirmar que o C3+ diminuiu imediatamente, pois esse é o indicador direto de abertura da MCV-39394.'
+  ],cok:0,
+  why:'O bypass deve existir antes de eliminar o caminho normal; depois do comando, a decisão só está completa quando a nova condição do sistema é confirmada.'
+ },
+ {
+  phase:'ISOLAMENTO DO PROCESSO',
+  title:'Retirar a torre do circuito',
+  state:[['MCV-39394','ABERTA','Bypass estabelecido','ok'],['MCV-39392 / 39393','ABERTAS','Torre ainda no caminho','warnc'],['FFV-39177 / MCV-39390','ALINHADAS','Óleo pobre','warnc'],['J-3907 A/B','EM SERVIÇO','Circulação ativa','warnc']],
+  q:'Com o bypass confirmado, qual conjunto de decisões retira a E-3906 do processo de forma coerente?',
+  opts:[
+    'Fechar MCV-39392/39393; isolar FFV-39177/MCV-39390; parar J-3907 A/B.',
+    'Fechar somente MCV-39392/39393 e manter o óleo pobre circulando até o final da despressurização.',
+    'Parar J-3907 A/B e manter as MCV-39392/39393 abertas para usar o gás de processo na drenagem da torre.'
+  ],ok:0,
+  cq:'Qual confirmação indica que a torre realmente deixou de receber as correntes normais de processo?',
+  copts:[
+    'Estados coerentes de isolamento do gás e do óleo pobre, com J-3907 A/B paradas, antes de tratar inventário e pressão residual.',
+    'Somente MCV-39394 aberta, independentemente das demais posições.',
+    'Somente redução do nível; se o nível cair, os demais isolamentos podem ser considerados concluídos.'
+  ],cok:0,
+  why:'O bypass do gás é apenas uma parte. O operador precisa confirmar também o isolamento do óleo pobre e a parada das J-3907.'
+ },
+ {
+  phase:'INVENTÁRIO LÍQUIDO',
+  title:'Reduzir o conteúdo da torre',
+  state:[['Gás','ISOLADO DA TORRE','Bypass em serviço','ok'],['Óleo pobre','ISOLADO','Sem alimentação normal','ok'],['J-3907 A/B','PARADAS','Bombas fora','ok'],['Nível E-3906','PRESENTE','Inventário líquido','warnc']],
+  q:'Qual é a próxima decisão coerente com o estado atual?',
+  opts:[
+    'Reduzir o nível ao mínimo através da FV-39178 e acompanhar a resposta antes da fase de despressurização.',
+    'Interligar imediatamente o topo ao flare e usar a queda de pressão para auxiliar a retirada do inventário líquido.',
+    'Iniciar purga química enquanto o nível ainda está presente, para reduzir o tempo total de preparação.'
+  ],ok:0,
+  cq:'Depois de atuar na FV-39178, o que deve ser confirmado antes de avançar?',
+  copts:[
+    'Que o inventário líquido foi reduzido à condição mínima prevista na manobra.',
+    'Que o C3+ no gás combustível retornou ao valor anterior à retirada.',
+    'Que a pressão da torre já está igual à atmosfera.'
+  ],cok:0,
+  why:'A fase é concluída pela resposta do nível, não apenas pelo comando enviado à FV-39178.'
+ },
+ {
+  phase:'DESPRESSURIZAÇÃO',
+  title:'Eliminar pressão residual',
+  state:[['Nível','MÍNIMO','Inventário reduzido','ok'],['Pressão E-3906','PRESENTE','Pressão residual','warnc'],['Vent 1½" → flare','NÃO INTERLIGADO','Caminho ainda indisponível','bad']],
+  q:'Qual decisão atende à próxima necessidade do equipamento?',
+  opts:[
+    'Interligar o vent de 1½" do topo à linha de flare e conduzir a despressurização até a equalização de pressão.',
+    'Abrir o vent diretamente para atmosfera, pois a torre já está isolada e com nível mínimo.',
+    'Abrir V12 no fundo para deslocar a pressão residual diretamente antes da purga química.'
+  ],ok:0,
+  cq:'Qual confirmação caracteriza o encerramento desta fase?',
+  copts:[
+    'A equalização da pressão pela rota prevista para o flare.',
+    'A redução do nível abaixo do mínimo já atingido.',
+    'O início do aumento de C3+ no gás combustível.'
+  ],cok:0,
+  why:'A manobra fornecida define a rota para flare até equalização; o treinamento não inventa um valor numérico de pressão.'
+ },
+ {
+  phase:'PURGA / STEAM-OUT',
+  title:'Preparar a torre para steam-out',
+  state:[['Pressão','EQUALIZADA','Despressurizada pela rota prevista','ok'],['Purga química','CONCLUÍDA','Etapa realizada','ok'],['Instrumentos','ALINHADOS','Ainda precisam bloqueio','bad'],['Vent atmosfera','FECHADO','Ainda não preparado','warnc'],['V12 fundo','FECHADO','Steam-out não iniciado','warnc']],
+  q:'Qual conjunto de ações prepara corretamente a próxima fase?',
+  opts:[
+    'Bloquear os instrumentos, abrir o vent para atmosfera e abrir V12 no fundo para iniciar o steam-out.',
+    'Abrir V12 primeiro e manter os instrumentos alinhados durante as primeiras horas para acompanhar a torre.',
+    'Abrir o vent para atmosfera e aguardar estabilização antes de decidir se os instrumentos precisam ser bloqueados.'
+  ],ok:0,
+  cq:'Depois de iniciar o steam-out, qual critério temporal explícito da manobra deve ser acompanhado?',
+  copts:[
+    'Manter o steam-out por 24 horas antes da etapa de medições.',
+    'Encerrar quando o C3+ do gás combustível estabilizar.',
+    'Encerrar quando o nível da E-3906 indicar zero.'
+  ],cok:0,
+  why:'A sequência fornecida explicita bloqueio dos instrumentos, vent para atmosfera, V12 no fundo e período de 24 h.'
+ },
+ {
+  phase:'LIBERAÇÃO',
+  title:'Decidir se o equipamento pode ser liberado',
+  state:[['Steam-out','24 h CONCLUÍDAS','Tempo cumprido','ok'],['Medições','PENDENTES','Explosividade ainda não verificada','bad'],['Liberação','NÃO AUTORIZADA','Etapa formal pendente','warnc']],
+  q:'Qual é a decisão correta nesta condição?',
+  opts:[
+    'Manter a E-3906 não liberada e realizar as medições previstas antes da liberação para manutenção.',
+    'Liberar condicionalmente para manutenção, pois as 24 h de steam-out substituem a verificação de explosividade.',
+    'Reabrir parcialmente o gás de processo para confirmar que não existe pressão residual antes da medição.'
+  ],ok:0,
+  cq:'O que deve ser confirmado para concluir esta etapa do treinamento?',
+  copts:[
+    'Que as medições não indicaram explosividade e que os demais requisitos formais de liberação foram atendidos.',
+    'Que o C3+ do gás combustível voltou ao valor anterior à retirada.',
+    'Que a FV-39178 permaneceu aberta durante todo o steam-out.'
+  ],cok:0,
+  why:'Steam-out concluído não equivale a equipamento liberado. A medição e a liberação formal continuam obrigatórias.'
+ }
 ];
-let ci=0,correctCases=0,answered=false;
+
+let ci=0, actionScore=0, confirmScore=0, answeredAction=false, answeredConfirm=false;
 function renderCase(){
- const c=cases[ci];answered=false;
- document.getElementById('caseTitle').textContent=c.title;document.getElementById('caseBadge').textContent=`CENÁRIO ${ci+1}/${cases.length}`;
+ const c=cases[ci]; answeredAction=false; answeredConfirm=false;
+ document.getElementById('casePhase').textContent=c.phase;
+ document.getElementById('caseTitle').textContent=c.title;
+ document.getElementById('caseBadge').textContent=`CENÁRIO ${ci+1}/${cases.length}`;
  document.getElementById('caseState').innerHTML=c.state.map(x=>inst(...x)).join('');
  document.getElementById('caseQuestion').textContent=c.q;
- const op=document.getElementById('caseOptions');op.innerHTML='';
- c.opts.forEach((o,j)=>{const b=document.createElement('button');b.className='btn';b.textContent=o;b.onclick=()=>answerCase(j);op.appendChild(b)});
- const f=document.getElementById('caseFeedback');f.className='feedback';f.textContent='';
+ const op=document.getElementById('caseOptions'); op.innerHTML='';
+ shuffledOptions(c.opts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>answerAction(o.i);op.appendChild(b)});
+ document.getElementById('confirmStage').classList.add('hidden');
+ document.getElementById('confirmOptions').innerHTML='';
+ const f=document.getElementById('caseFeedback'); f.className='feedback'; f.textContent='';
  document.getElementById('nextCase').disabled=true;
- document.getElementById('caseScore').innerHTML=`<b>Desempenho:</b> ${correctCases}/${ci} decisões corretas concluídas.`;
+ updateCaseScore();
 }
-function answerCase(j){
- if(answered)return;answered=true;const c=cases[ci];const f=document.getElementById('caseFeedback');
- if(j===c.ok){correctCases++;f.className='feedback show yes';f.innerHTML=`<b>Decisão adequada.</b><br>${c.why}`}
- else{f.className='feedback show no';f.innerHTML=`<b>Decisão inadequada.</b><br>${c.why}`}
- document.getElementById('nextCase').disabled=false;
+function answerAction(j){
+ if(answeredAction)return; answeredAction=true; const c=cases[ci]; const f=document.getElementById('caseFeedback');
+ if(j===c.ok){actionScore++; f.className='feedback show yes'; f.innerHTML='<b>Ação coerente.</b> Agora falta definir o que deve ser confirmado antes de avançar.'}
+ else{f.className='feedback show no'; f.innerHTML='<b>Ação incompatível com o estado atual.</b> Reavalie qual condição ainda precisa ser estabelecida ou eliminada nesta fase.'}
+ document.getElementById('confirmStage').classList.remove('hidden');
+ document.getElementById('confirmQuestion').textContent=c.cq;
+ const co=document.getElementById('confirmOptions'); co.innerHTML='';
+ shuffledOptions(c.copts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>answerConfirm(o.i);co.appendChild(b)});
 }
-document.getElementById('nextCase').onclick=()=>{if(ci<cases.length-1){ci++;renderCase()}else{document.getElementById('caseScore').innerHTML=`<b>Resultado final:</b> ${correctCases}/${cases.length} decisões corretas.`}};
-document.getElementById('resetCases').onclick=()=>{ci=0;correctCases=0;renderCase()};renderCase();
+function answerConfirm(j){
+ if(answeredConfirm)return; answeredConfirm=true; const c=cases[ci]; const f=document.getElementById('caseFeedback');
+ if(j===c.cok){confirmScore++; f.className='feedback show yes'; f.innerHTML='<b>Gate concluído.</b> '+c.why}
+ else{f.className='feedback show no'; f.innerHTML='<b>Confirmação insuficiente.</b> '+c.why}
+ document.getElementById('nextCase').disabled=false; updateCaseScore();
+}
+function updateCaseScore(){
+ document.getElementById('caseScore').innerHTML=`<div class="score-grid"><div><b>${actionScore}</b><small>ações corretas</small></div><div><b>${confirmScore}</b><small>confirmações corretas</small></div><div><b>${ci}</b><small>cenários concluídos</small></div><div><b>${Math.round(((actionScore+confirmScore)/Math.max(1,(ci*2)+(answeredAction?1:0)+(answeredConfirm?1:0)))*100)}%</b><small>desempenho atual</small></div></div>`;
+}
+document.getElementById('nextCase').onclick=()=>{if(ci<cases.length-1){ci++;renderCase()}else{document.getElementById('caseScore').innerHTML=`<b>Resultado final:</b> ${actionScore}/${cases.length} ações corretas e ${confirmScore}/${cases.length} confirmações corretas.`}};
+document.getElementById('resetCases').onclick=()=>{ci=0;actionScore=0;confirmScore=0;renderCase()}; renderCase();
 
-function spark(type){
- const pts={flat:'10,35 35,35 60,34 85,35 110,35 135,34 160,35 190,35',down:'10,15 35,20 60,23 85,28 110,34 135,39 160,45 190,51',up:'10,52 35,47 60,43 85,37 110,31 135,25 160,20 190,14',diverge:'10,20 35,22 60,25 85,30 110,37 135,42 160,48 190,55'}[type];
- return `<div class="spark"><svg viewBox="0 0 200 65" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>`;
-}
-const trendData=[
- ['Pressão montante','ESTÁVEL','flat','info','Bypass estabelecido e caminho jusante disponível.'],
- ['Pressão E-3906','↓','down','warnc','Após isolamento/despressurização, espera-se redução coerente da pressão da torre.'],
- ['Pressão jusante','ESTÁVEL','flat','info','O sistema continua com caminho através do bypass.'],
- ['C3+ gás combustível','↑','up','warnc','Impacto esperado informado com a retirada da absorvedora secundária.'],
- ['Nível E-3906','↓','down','info','Resposta esperada durante redução do inventário via FV-39178.'],
- ['Medições pós steam-out','AGUARDANDO','flat','bad','Sem medição, não há liberação final.']
+const trendCases=[
+ {
+  t:'Caminho de gás após isolamento',
+  state:'MCV-39394 FECHADA • MCV-39392/39393 FECHADAS • pressão montante ↑',
+  q:'Qual leitura deve prevalecer?',
+  opts:[
+   'A elevação de pressão pode estar relacionada ao bloqueio do caminho do gás; interromper a progressão e corrigir o alinhamento.',
+   'Como a torre está isolada, a elevação de pressão confirma que o isolamento foi eficiente e a manobra pode continuar.',
+   'A tendência deve ser ignorada até o nível da E-3906 começar a cair, pois pressão e bypass são independentes.'
+  ],ok:0,
+  why:'O conjunto posição de válvulas + tendência de pressão indica uma condição incompatível com a progressão.'
+ },
+ {
+  t:'Qualidade do gás combustível após retirada',
+  state:'Bypass estabelecido • E-3906 fora do caminho • pressões coerentes • C3+ gás combustível ↑',
+  q:'Como interpretar o aumento de C3+ neste contexto?',
+  opts:[
+   'Como impacto esperado da retirada da absorvedora secundária, mantendo monitoramento sem concluir automaticamente que o bypass falhou.',
+   'Como prova de que a MCV-39394 não abriu, mesmo que as pressões indiquem caminho de gás estabelecido.',
+   'Como indicação de que a E-3906 ainda recebe óleo pobre e deve ser repressurizada.'
+  ],ok:0,
+  why:'O usuário informou aumento de C3+ como consequência da retirada; ele deve ser interpretado junto com os demais estados do sistema.'
+ },
+ {
+  t:'Resposta do inventário líquido',
+  state:'Gás/óleo isolados • J-3907 A/B paradas • comando de redução de nível pela FV-39178 • nível sem resposta perceptível',
+  q:'Qual decisão é mais adequada antes de avançar?',
+  opts:[
+   'Não avançar; confirmar a resposta da drenagem/indicação e a condição de campo antes de considerar o inventário reduzido.',
+   'Avançar para o flare, porque a pressão poderá compensar a ausência de resposta do nível.',
+   'Iniciar a purga química e usar o comportamento posterior do nível para validar a FV-39178.'
+  ],ok:0,
+  why:'O treinamento evita inventar a causa da falta de resposta; o ponto é não avançar sem confirmar a condição requerida.'
+ }
 ];
-document.getElementById('trendPanel').innerHTML=trendData.map(x=>`<div class="trend-card ${x[3]}"><b>${x[0]} — ${x[1]}</b>${spark(x[2])}<small>${x[4]}</small></div>`).join('');
-document.getElementById('trendQuestion').innerHTML=`<div class="subtle">INTERPRETAÇÃO CIC</div><div class="decision-question">Se a pressão montante começa a subir após o operador fechar o caminho normal e a MCV-39394 ainda está fechada, qual associação deve ser feita?</div><div class="options"><button class="btn" onclick="trendAns(false)">É apenas uma oscilação sem relação com o alinhamento.</button><button class="btn" onclick="trendAns(true)">O caminho do gás pode estar bloqueado sem bypass; interromper a progressão e corrigir o alinhamento.</button></div><div id="trendFb" class="feedback"></div>`;
-window.trendAns=(ok)=>{const f=document.getElementById('trendFb');f.className='feedback show '+(ok?'yes':'no');f.textContent=ok?'Correto. Relacione tendência de pressão com o estado das válvulas antes de seguir.':'Revise o caminho do gás: MCV-39394 fechada + caminho normal fechado é uma condição incompatível com a progressão.'};
+const tc=document.getElementById('trendCases');
+trendCases.forEach((s,i)=>{
+ const d=document.createElement('div'); d.className='scenario';
+ d.innerHTML=`<h3>${i+1}. ${s.t}</h3><div class="subtle">${s.state}</div><p>${s.q}</p><div class="opts"></div><div class="result">${s.why}</div>`;
+ shuffledOptions(s.opts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>{if(d.classList.contains('answered'))return;d.classList.add('answered',o.i===s.ok?'correct':'incorrect')};d.querySelector('.opts').appendChild(b)});
+ tc.appendChild(d);
+});
 
 const failures=[
- ['Bypass ausente','MCV-39394 FECHADA • MCV-39392/39393 FECHADAS • pressão montante ↑','Pode avançar?',['Sim.','Não; corrigir o caminho do gás antes de prosseguir.'],1,'A condição sugere represamento por ausência do contorno.'],
- ['Óleo pobre ainda alinhado','39392/39393 FECHADAS • FFV-39177 e MCV-39390 ABERTAS • J-3907A RUN','A torre está isolada?',['Sim.','Não.'],1,'O circuito de óleo pobre ainda mantém conexão com a torre.'],
- ['Inventário presente','Gás e óleo isolados • nível ainda elevado','Pode ir direto para purga?',['Sim.','Não; reduzir nível ao mínimo via FV-39178.'],1,'O inventário líquido ainda precisa ser reduzido.'],
- ['Steam-out com instrumentos alinhados','Purga concluída • vent atm aberto • V12 aberto • instrumentos ainda alinhados','A preparação está correta?',['Sim.','Não; os instrumentos deveriam estar bloqueados.'],1,'A sequência fornecida exige bloqueio dos instrumentos.'],
- ['24 h sem medição','Steam-out 24 h • explosividade não medida','Pode liberar?',['Sim.','Não.'],1,'É necessário realizar as medições antes da liberação.']
+ {
+  t:'Isolamento parcial do óleo pobre',
+  state:'MCV-39394 ABERTA • MCV-39392/39393 FECHADAS • FFV-39177 FECHADA • MCV-39390 ABERTA • J-3907A parada',
+  q:'Qual decisão é mais coerente?',
+  opts:[
+   'Não declarar isolamento concluído; ainda existe condição pendente no circuito de óleo pobre.',
+   'Prosseguir para drenagem, porque fechar FFV-39177 é suficiente para eliminar a alimentação de óleo pobre.',
+   'Prosseguir para flare e deixar MCV-39390 para ser fechada durante a despressurização.'
+  ],ok:0,
+  why:'O procedimento fornecido inclui fechamento de FFV-39177 e MCV-39390, além da parada das J-3907 A/B.'
+ },
+ {
+  t:'Pressão ainda presente com nível mínimo',
+  state:'Nível mínimo • gás e óleo isolados • pressão E-3906 ainda presente • vent 1½" ainda não interligado ao flare',
+  q:'Qual é o melhor próximo passo?',
+  opts:[
+   'Preparar a rota de despressurização para o flare e confirmar equalização antes da purga.',
+   'Abrir V12 no fundo para deslocar a pressão e iniciar antecipadamente o steam-out.',
+   'Abrir o vent para atmosfera, já que o nível mínimo reduz o risco da despressurização.'
+  ],ok:0,
+  why:'A rota explicitamente fornecida para esta fase é o vent do topo interligado ao flare até equalização.'
+ },
+ {
+  t:'Steam-out iniciado com condição incompleta',
+  state:'Purga química concluída • vent atmosfera aberto • V12 aberto • instrumentos ainda alinhados',
+  q:'Como o CIC deve tratar essa condição?',
+  opts:[
+   'Interromper a progressão da fase e assegurar o bloqueio dos instrumentos conforme a preparação definida.',
+   'Manter o steam-out, pois o bloqueio dos instrumentos pode ser realizado após estabilizar o vapor.',
+   'Considerar a fase aceita se o vent estiver aberto e o tempo de 24 h já tiver iniciado.'
+  ],ok:0,
+  why:'A preparação fornecida exige o bloqueio dos instrumentos antes/durante a entrada na fase de steam-out.'
+ },
+ {
+  t:'Fim das 24 h',
+  state:'Steam-out 24 h concluído • medições ainda não realizadas • equipamento isolado',
+  q:'Qual status deve ser mantido?',
+  opts:[
+   'Não liberado para manutenção até realizar as medições e atender os requisitos formais de liberação.',
+   'Liberado para manutenção mecânica, mantendo apenas restrição para serviços a quente.',
+   'Liberado desde que o vent permaneça aberto para atmosfera durante a intervenção.'
+  ],ok:0,
+  why:'A informação fornecida condiciona a liberação às medições após o steam-out e à ausência de explosividade.'
+ }
 ];
 const fl=document.getElementById('failureList');
-failures.forEach((s,i)=>{const d=document.createElement('div');d.className='scenario';d.innerHTML=`<h3>${i+1}. ${s[0]}</h3><div class="subtle">${s[1]}</div><p>${s[2]}</p><div class="opts"></div><div class="result">${s[5]}</div>`;s[3].forEach((o,j)=>{const b=document.createElement('button');b.className='btn';b.textContent=o;b.onclick=()=>{if(d.classList.contains('answered'))return;d.classList.add('answered',j===s[4]?'correct':'incorrect')};d.querySelector('.opts').appendChild(b)});fl.appendChild(d)});
+failures.forEach((s,i)=>{
+ const d=document.createElement('div');d.className='scenario';d.innerHTML=`<h3>${i+1}. ${s.t}</h3><div class="subtle">${s.state}</div><p>${s.q}</p><div class="opts"></div><div class="result">${s.why}</div>`;
+ shuffledOptions(s.opts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>{if(d.classList.contains('answered'))return;d.classList.add('answered',o.i===s.ok?'correct':'incorrect')};d.querySelector('.opts').appendChild(b)});
+ fl.appendChild(d);
+});
 
+// ---------- Final simulator: action + confirmation gates ----------
 const simSteps=[
- {name:'BYPASS',state:[['MCV-39394','FECHADA','Bypass','bad'],['39392 / 39393','ABERTAS','Caminho normal','ok'],['Óleo pobre','ALINHADO','Circuito ativo','ok']],acts:['Abrir MCV-39394','Fechar MCV-39392/39393','Parar J-3907 A/B'],ok:0},
- {name:'ISOLAR GÁS',state:[['MCV-39394','ABERTA','Bypass','ok'],['39392 / 39393','ABERTAS','Caminho normal','warnc']],acts:['Fechar MCV-39392/39393','Abrir vent para atmosfera','Abrir V12'],ok:0},
- {name:'ISOLAR ÓLEO',state:[['MCV-39394','ABERTA','Bypass','ok'],['39392 / 39393','FECHADAS','Gás isolado','ok'],['FFV-39177 / MCV-39390','ABERTAS','Óleo pobre','bad'],['J-3907 A/B','OPERANDO','Bombas','bad']],acts:['Fechar FFV-39177 / MCV-39390 e parar J-3907 A/B','Abrir V12','Liberar manutenção'],ok:0},
- {name:'DRENAR',state:[['Gás','ISOLADO','Torre fora do caminho','ok'],['Óleo pobre','ISOLADO','Sem entrada','ok'],['Nível','PRESENTE','Inventário','warnc']],acts:['Reduzir nível ao mínimo pela FV-39178','Conectar vent ao flare antes de reduzir nível','Liberar manutenção'],ok:0},
- {name:'FLARE',state:[['Nível','MÍNIMO','Inventário reduzido','ok'],['Pressão','PRESENTE','Pressurizada','warnc'],['Vent → flare','NÃO ALINHADO','Sem despressurização','bad']],acts:['Interligar vent 1½" ao flare até equalização','Abrir vent atmosfera e V12 diretamente','Liberar manutenção'],ok:0},
- {name:'PURGA',state:[['Pressão','EQUALIZADA','Despressurizada','ok'],['Purga química','PENDENTE','Próxima fase','warnc']],acts:['Realizar purga química','Iniciar steam-out sem purga','Liberar manutenção'],ok:0},
- {name:'STEAM-OUT',state:[['Purga química','CONCLUÍDA','Etapa anterior','ok'],['Instrumentos','ALINHADOS','Precisam bloqueio','bad'],['Vent atmosfera','FECHADO','Precisa abrir','bad'],['V12 fundo','FECHADO','Precisa alinhar','bad']],acts:['Bloquear instrumentos, abrir vent atmosfera e abrir V12','Apenas abrir V12','Liberar manutenção'],ok:0},
- {name:'24 HORAS',state:[['Steam-out','EM CURSO','V12 + vent','info'],['Tempo','< 24 h','Ainda não concluído','warnc']],acts:['Manter steam-out até 24 h','Encerrar antecipadamente','Liberar manutenção'],ok:0},
- {name:'MEDIR',state:[['Steam-out','24 h CONCLUÍDAS','Etapa concluída','ok'],['Medições','PENDENTES','Explosividade não verificada','bad']],acts:['Realizar medições','Liberar manutenção diretamente','Repressurizar a torre'],ok:0},
- {name:'LIBERAR',state:[['Medições','SEM EXPLOSIVIDADE','Condição informada atendida','ok'],['Demais requisitos formais','A CONFIRMAR','PT/AR e liberação','warnc']],acts:['Concluir liberação conforme requisitos formais','Retornar E-3906 à operação','Abrir MCV-39392'],ok:0}
+ {
+  state:[['MCV-39394','FECHADA','Bypass','bad'],['MCV-39392 / 39393','ABERTAS','Caminho normal','ok'],['Óleo pobre','ALINHADO','Circuito ativo','ok']],
+  acts:['Abrir MCV-39394 e manter o caminho normal até confirmar o bypass.','Fechar MCV-39392/39393 e abrir a MCV-39394 em seguida.','Parar J-3907 A/B e reduzir nível antes de alterar o caminho do gás.'],ok:0,
+  confirms:['Pressões/caminho de gás coerentes com o contorno estabelecido.','Nível da E-3906 reduzindo pela FV-39178.','C3+ do gás combustível diminuindo.'],cok:0
+ },
+ {
+  state:[['MCV-39394','ABERTA','Bypass confirmado','ok'],['MCV-39392 / 39393','ABERTAS','Torre ainda no caminho','warnc'],['FFV-39177 / MCV-39390','ALINHADAS','Óleo pobre','warnc'],['J-3907 A/B','EM SERVIÇO','Bombas','warnc']],
+  acts:['Isolar gás e óleo pobre e parar J-3907 A/B.','Isolar somente o gás e manter óleo pobre para reduzir inventário.','Parar J-3907 A/B e manter MCV-39392/39393 abertas durante a drenagem.'],ok:0,
+  confirms:['Torre sem as alimentações normais de gás/óleo pobre e J-3907 A/B paradas.','Somente MCV-39394 aberta.','Aumento de C3+ no gás combustível.'],cok:0
+ },
+ {
+  state:[['Gás','ISOLADO DA TORRE','Bypass','ok'],['Óleo pobre','ISOLADO','Sem alimentação','ok'],['J-3907 A/B','PARADAS','Bombas fora','ok'],['Nível','PRESENTE','Inventário','warnc']],
+  acts:['Reduzir nível ao mínimo através da FV-39178.','Interligar vent ao flare antes de atuar no nível.','Realizar purga química com inventário ainda presente.'],ok:0,
+  confirms:['Nível reduzido à condição mínima prevista na manobra.','Pressão igual à atmosfera.','C3+ estabilizado.'],cok:0
+ },
+ {
+  state:[['Nível','MÍNIMO','Inventário reduzido','ok'],['Pressão E-3906','PRESENTE','Pressão residual','warnc'],['Vent 1½" → flare','NÃO INTERLIGADO','Rota pendente','bad']],
+  acts:['Interligar vent de 1½" ao flare até equalização.','Abrir vent para atmosfera e iniciar despressurização direta.','Abrir V12 no fundo para reduzir pressão.'],ok:0,
+  confirms:['Equalização da pressão pela rota prevista para o flare.','Nível abaixo do mínimo.','Retorno do C3+ à condição anterior.'],cok:0
+ },
+ {
+  state:[['Pressão','EQUALIZADA','Despressurizada','ok'],['Purga química','PENDENTE','Etapa ainda não realizada','warnc']],
+  acts:['Realizar a purga química conforme procedimento específico.','Iniciar steam-out e realizar a purga durante as primeiras horas.','Abrir o vent para atmosfera e considerar a purga dispensada pela despressurização.'],ok:0,
+  confirms:['Purga química concluída antes de preparar o steam-out.','V12 já aberto.','J-3907 A/B disponíveis para partida.'],cok:0
+ },
+ {
+  state:[['Purga química','CONCLUÍDA','Etapa anterior','ok'],['Instrumentos','ALINHADOS','Bloqueio pendente','bad'],['Vent atmosfera','FECHADO','Ação pendente','warnc'],['V12 fundo','FECHADO','Ação pendente','warnc']],
+  acts:['Bloquear instrumentos, abrir vent para atmosfera e abrir V12 no fundo.','Abrir V12 e manter instrumentos alinhados para acompanhar as primeiras horas.','Abrir somente vent para atmosfera e aguardar nova decisão.'],ok:0,
+  confirms:['Steam-out estabelecido nas condições previstas e contagem de 24 h iniciada.','C3+ do gás combustível em queda.','Nível da torre retornando ao normal.'],cok:0
+ },
+ {
+  state:[['Steam-out','EM CURSO','Vent + V12','info'],['Tempo','< 24 h','Período ainda não cumprido','warnc']],
+  acts:['Manter o steam-out até completar 24 h.','Encerrar quando a pressão permanecer em atmosfera.','Encerrar quando o nível indicar mínimo.'],ok:0,
+  confirms:['Período de 24 h concluído antes de partir para medições.','FV-39178 totalmente aberta.','MCV-39394 fechada.'],cok:0
+ },
+ {
+  state:[['Steam-out','24 h CONCLUÍDAS','Tempo cumprido','ok'],['Medições','PENDENTES','Explosividade não verificada','bad'],['Liberação','NÃO AUTORIZADA','Gate final','warnc']],
+  acts:['Realizar as medições previstas antes de liberar para manutenção.','Liberar para manutenção e realizar medição apenas antes de serviço a quente.','Fechar o vent e repressurizar levemente para verificar estanqueidade antes da medição.'],ok:0,
+  confirms:['Medições sem explosividade e demais requisitos formais de liberação atendidos.','C3+ normalizado.','J-3907 A/B disponíveis.'],cok:0
+ }
 ];
-let ss=0,simCorrect=0,simErrors=0;
+
+let ss=0, simActionCorrect=0, simConfirmCorrect=0, simErrors=0, simAwaitConfirm=false;
 function renderSim(){
  const s=simSteps[ss];
  document.getElementById('simState').innerHTML=s.state.map(x=>inst(...x)).join('');
- document.getElementById('simTitle').textContent=`Etapa ${ss+1}/${simSteps.length} — ${s.name}`;
- document.getElementById('simPrompt').textContent='Selecione a próxima decisão a partir do estado atual. Nenhuma dica de sequência será mostrada.';
- const a=document.getElementById('simActions');a.innerHTML='';
- s.acts.forEach((txt,j)=>{const b=document.createElement('button');b.className='btn';b.textContent=txt;b.onclick=()=>simAnswer(j);a.appendChild(b)});
+ document.getElementById('simTitle').textContent=`Avaliação — etapa ${ss+1} de ${simSteps.length}`;
+ document.getElementById('simPrompt').textContent=simAwaitConfirm?'A ação foi selecionada. Agora escolha o que precisa ser confirmado antes de avançar.':'Selecione a próxima decisão a partir do estado atual.';
+ document.getElementById('simStagePill').textContent=`ETAPA ${ss+1}/${simSteps.length}`;
+ document.getElementById('simGatePill').textContent=simAwaitConfirm?'AGUARDANDO CONFIRMAÇÃO':'AGUARDANDO DECISÃO';
+ document.getElementById('simGatePill').style.borderColor=simAwaitConfirm?'#a58439':'#375970';
+
+ const act=document.getElementById('simActions'); act.innerHTML='';
+ shuffledOptions(s.acts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.disabled=simAwaitConfirm;b.onclick=()=>simAction(o.i);act.appendChild(b)});
+
+ const cb=document.getElementById('simConfirmBlock');
+ const co=document.getElementById('simConfirm'); co.innerHTML='';
+ if(simAwaitConfirm){
+   cb.classList.remove('hidden');
+   shuffledOptions(s.confirms).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>simConfirmation(o.i);co.appendChild(b)});
+ } else cb.classList.add('hidden');
+
  const f=document.getElementById('simFeedback');f.className='feedback';f.textContent='';
- document.getElementById('simTimeline').innerHTML=simSteps.map((x,i)=>`<div class="node" style="${i<ss?'border-color:#4e8f5a;background:#10291a':i===ss?'border-color:#6bcaff':''}">${x.name}</div>${i<simSteps.length-1?'<div class="arrow">→</div>':''}`).join('');
- document.getElementById('simScore').innerHTML=`<div class="score-grid"><div><b>${simCorrect}</b><small>decisões corretas</small></div><div><b>${simErrors}</b><small>erros</small></div><div><b>${ss}</b><small>etapas concluídas</small></div><div><b>${Math.round((simCorrect/Math.max(1,simCorrect+simErrors))*100)}%</b><small>acerto</small></div></div>`;
+ updateSimScore();
 }
-function simAnswer(j){
+function simAction(j){
  const s=simSteps[ss],f=document.getElementById('simFeedback');
  if(j===s.ok){
-  simCorrect++;f.className='feedback show yes';f.textContent='Decisão coerente com o estado atual. Confirme a resposta esperada do processo e avance.';
-  setTimeout(()=>{if(ss<simSteps.length-1){ss++;renderSim()}else{document.getElementById('simTitle').textContent='Avaliação concluída';document.getElementById('simPrompt').textContent='A retirada chegou à etapa de liberação após as medições e requisitos formais.'}},500);
+   simActionCorrect++; simAwaitConfirm=true;
+   f.className='feedback show yes';f.textContent='Ação coerente. O gate ainda não está concluído: selecione a confirmação necessária.';
+   renderSim();
  }else{
-  simErrors++;f.className='feedback show no';f.textContent='Essa decisão não é compatível com o estado atual. Reavalie o que ainda está conectado, pressurizado ou pendente antes de avançar.';
-  document.getElementById('simScore').innerHTML=`<div class="score-grid"><div><b>${simCorrect}</b><small>decisões corretas</small></div><div><b>${simErrors}</b><small>erros</small></div><div><b>${ss}</b><small>etapas concluídas</small></div><div><b>${Math.round((simCorrect/Math.max(1,simCorrect+simErrors))*100)}%</b><small>acerto</small></div></div>`;
+   simErrors++;
+   f.className='feedback show no';f.textContent='A decisão não é compatível com o estado atual. Reavalie o que ainda precisa ser estabelecido, isolado ou eliminado.';
+   updateSimScore();
  }
 }
-document.getElementById('resetSim').onclick=()=>{ss=0;simCorrect=0;simErrors=0;renderSim()};renderSim();
+function simConfirmation(j){
+ const s=simSteps[ss],f=document.getElementById('simFeedback');
+ if(j===s.cok){
+   simConfirmCorrect++;
+   f.className='feedback show yes';f.textContent='Gate concluído. A condição foi confirmada e a manobra pode avançar.';
+   setTimeout(()=>{
+     simAwaitConfirm=false;
+     if(ss<simSteps.length-1){ss++;renderSim()}
+     else{
+       document.getElementById('simTitle').textContent='Avaliação concluída';
+       document.getElementById('simPrompt').textContent='A E-3906 chegou à condição de liberação somente após decisão e confirmação em cada fase.';
+       document.getElementById('simActions').innerHTML='';
+       document.getElementById('simConfirmBlock').classList.add('hidden');
+       document.getElementById('simGatePill').textContent='CONCLUÍDO';
+       updateSimScore(true);
+     }
+   },450);
+ }else{
+   simErrors++;
+   f.className='feedback show no';f.textContent='A ação pode ter sido correta, mas essa confirmação não fecha o gate desta etapa. Reavalie qual resposta do processo precisa ser comprovada.';
+   updateSimScore();
+ }
+}
+function updateSimScore(done=false){
+ const totalAttempts=simActionCorrect+simConfirmCorrect+simErrors;
+ const pct=Math.round(((simActionCorrect+simConfirmCorrect)/Math.max(1,totalAttempts))*100);
+ document.getElementById('simScore').innerHTML=`<div class="score-grid"><div><b>${simActionCorrect}</b><small>decisões</small></div><div><b>${simConfirmCorrect}</b><small>confirmações</small></div><div><b>${simErrors}</b><small>erros</small></div><div><b>${pct}%</b><small>precisão</small></div></div>${done?'<div class="note"><b>Critério de domínio:</b> não basta acertar a ação; o operador precisa reconhecer a confirmação necessária antes de avançar.</div>':''}`;
+}
+document.getElementById('resetSim').onclick=()=>{ss=0;simActionCorrect=0;simConfirmCorrect=0;simErrors=0;simAwaitConfirm=false;renderSim()};renderSim();
 </script>
 </body>
 </html>

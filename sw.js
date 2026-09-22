@@ -1,4 +1,4 @@
-const CACHE_NAME = 'e3906-concept-v3-cic-decision';
+const CACHE_NAME = 'e3906-concept-v4-cic-refino';
 const APP_SHELL = [
   './',
   './index.html',
