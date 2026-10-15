@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Corretor do layout E-3906 — V6</title>
+<style>
+:root{font-family:system-ui,Arial,sans-serif;color-scheme:dark;background:#06111a;color:#edf5fb}
+*{box-sizing:border-box}body{max-width:850px;margin:0 auto;padding:26px 15px;line-height:1.5}
+h1{font-size:clamp(23px,5vw,31px);margin:0 0 8px}p{color:#b7cad8}.panel{background:#0f2333;border:1px solid #365470;border-radius:18px;padding:18px;margin-top:16px}.btn{background:#204e70;color:white;border:1px solid #82b8e2;border-radius:12px;padding:13px 18px;font-weight:800;cursor:pointer;font-size:15px}.btn:disabled{opacity:.5;cursor:wait}input{max-width:100%}strong{color:#fff}#status{white-space:pre-wrap;padding:10px 0;margin:4px 0 0;font-size:14px}.note{background:#102c25;border:1px solid #3c8170;border-radius:12px;padding:10px 13px}
+</style></head><body><h1>🔧 E-3906 — Correção de layout V6</h1>
+<p>Corrige botões que ficam em cima da imagem, deixa as lâmpadas livres e move a manobra de retirada para debaixo do processo. Preserva dados técnicos, conteúdo integral, laboratório V5 e instalações PWA.</p>
+<div class="panel"><h2>1. Gerar arquivo corrigido</h2><p>Clique abaixo. O preparador busca o <code>index.html</code> mais recente de <strong>robexter/E-3906-concept</strong> e gera um novo <code>index.html</code> sem alterar outros equipamentos.</p><button class="btn" id="make">Gerar meu index.html corrigido</button><p id="status" role="status">Aguardando...</p></div>
+<div class="panel"><h2>2. Caso a conexão falhe</h2><p>Baixe o <code>index.html</code> atual do seu GitHub, selecione-o abaixo e clique em <strong>Corrigir arquivo selecionado</strong>.</p><input type="file" id="file" accept=".html,text/html"> <button class="btn" id="local">Corrigir arquivo selecionado</button></div>
+<div class="panel"><h2>3. Publicar no repositório certo</h2><p>Entre em <a href="https://github.com/robexter/E-3906-concept" target="_blank" rel="noopener">GitHub E-3906-concept</a>, clique em <strong>Add file → Upload files</strong> e substitua <strong>somente o index.html na raiz</strong>. Depois confirme o commit.</p><p class="note">Não envie nada ao portal central. Não precisa extrair nem alterar <code>sw.js</code>.</p></div>
+<script>
+const REPO_URL='https://raw.githubusercontent.com/robexter/E-3906-concept/main/index.html';
+const FIXCSS="<style id=\"e3906-layout-v6\">\n/* Lâmpadas sempre desobstruídas; controles após a imagem em todas as larguras. */\n.e3906-quick-actions{\n position:static!important;left:auto!important;right:auto!important;bottom:auto!important;\n transform:none!important;z-index:auto!important;max-width:none;width:100%;margin:12px 0;\n display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px;\n border-radius:17px;background:#0b1a27;border:1px solid #2d4b61;box-shadow:none;box-sizing:border-box;\n}\n.e3906-quick-actions>.ui{width:100%;min-width:0;min-height:48px;padding:10px 8px;\n font-size:clamp(12px,3.6vw,15px);line-height:1.2;text-align:center;white-space:normal}\n#maintenanceTraining{margin:10px 0 16px}\n.e3906-tools-v5{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0 18px}\n.e3906-tools-v5>#ci-open,.e3906-tools-v5>#lc5-open{\n position:static!important;inset:auto!important;top:auto!important;left:auto!important;\n right:auto!important;bottom:auto!important;transform:none!important;margin:0!important;\n display:flex!important;align-items:center!important;justify-content:center!important;\n width:100%!important;max-width:none!important;min-width:0!important;min-height:48px!important;\n box-sizing:border-box!important;white-space:normal!important;text-align:center!important;\n line-height:1.2!important;padding:10px 7px!important;font-size:clamp(11px,3.4vw,14px)!important;\n box-shadow:none!important;border-radius:13px!important;\n}\n@media(max-width:380px){\n .e3906-quick-actions,.e3906-tools-v5{gap:7px}\n .e3906-quick-actions>.ui{font-size:12px;padding:10px 6px}\n #maintenanceTraining{padding:12px}\n}\n<\/style>";
+const FIXJS="<script>\n/* Alinha os botões V5 abaixo da imagem sem recriar os botões nem perder seus ouvintes. */\n(()=>{const dock=document.getElementById('e3906-study-tools');if(!dock)return;\n const arrange=()=>{for(const id of ['ci-open','lc5-open']){\n  const el=document.getElementById(id);if(el&&el.parentElement!==dock)dock.appendChild(el);\n }};\n const observer=new MutationObserver(arrange);\n observer.observe(document.body,{childList:true,subtree:true});\n arrange();document.addEventListener('DOMContentLoaded',arrange,{once:true});\n})();\n<\/script>";
+const status=document.getElementById('status');
+const oldHead='<a class="ui" href="./retirada-e3906.html?v=4" style="text-decoration:none">🛠️ Retirada E-3906</a>';
+function fixHtml(original){
+ if(!original.includes('id="floodBtn"')||!original.includes('id="summaryBtn"')||!original.includes('id="maintenanceTraining"'))throw Error('O arquivo não corresponde à versão esperada da E-3906. Atualização cancelada para preservar seu conteúdo.');
+ if(original.includes('e3906-quick-actions'))throw Error('Esta correção já aparece no arquivo; não é necessário executá-la novamente.');
+ let s=original;
+ const beforeImage=s.match(/data:image\/png;base64,[^" ]+/)?.[0];
+ const beforeTechnical=s.slice(s.indexOf('const DATA ='),s.indexOf("document.addEventListener('keydown'"));
+ if(!s.includes(oldHead))throw Error('Atalho original não encontrado: arquivo com estrutura diferente.');
+ s=s.replace('  '+oldHead+'\n','');
+ const trainMatch=s.match(/  <section class="maint-area" id="maintenanceTraining">[\s\S]*?  <\/section>\n\n(?=  <div class="stage-shell">)/);
+ if(!trainMatch)throw Error('Não encontrei o treinamento original.');
+ const training=trainMatch[0].trimEnd(); s=s.replace(trainMatch[0],'');
+ const controls=/<div class="bottom">\s*<button class="ui" id="floodBtn">Entenda flooding<\/button>\s*<button class="ui" id="summaryBtn">Resumo E-3906<\/button>\s*<\/div>/;
+ if(!controls.test(s))throw Error('Botões originais não encontrados.');
+ s=s.replace(controls,'');
+ const anchor='\n  </div>\n</div>\n\n<aside class="panel"';
+ if(s.split(anchor).length!==2)throw Error('Posição após a tela do processo não foi reconhecida.');
+ const insert=`\n  </div>\n\n  <nav class="bottom e3906-quick-actions" aria-label="Estudo rápido E-3906">\n    <button class="ui" id="floodBtn" type="button">Entenda flooding</button>\n    <button class="ui" id="summaryBtn" type="button">Resumo E-3906</button>\n  </nav>\n\n${training}\n\n  <div class="e3906-tools-v5" id="e3906-study-tools" aria-label="Conteúdo Integral e Laboratório"></div>\n</div>\n\n<aside class="panel"`;
+ s=s.replace(anchor,insert);
+ s=s.replace('</body>',FIXCSS+'\n'+FIXJS+'\n</body>');
+ if((s.match(/id="floodBtn"/g)||[]).length!==1 ||(s.match(/id="summaryBtn"/g)||[]).length!==1 ||s.indexOf('id="maintenanceTraining"')<s.indexOf('class="stage-shell"'))throw Error('A validação da nova estrutura falhou.');
+ if((s.match(/data:image\/png;base64,[^" ]+/)||[])[0]!==beforeImage || s.slice(s.indexOf('const DATA ='),s.indexOf("document.addEventListener('keydown'"))!==beforeTechnical)throw Error('A validação de preservação do conteúdo falhou.');
+ return s;
+}
+function download(source){const output=fixHtml(source);const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([output],{type:'text/html;charset=utf-8'}));link.download='index.html';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),5000);status.textContent='✅ Arquivo corrigido gerado. Diagrama e DATA técnicos preservados. Agora envie index.html à raiz do GitHub E-3906.';}
+const make=document.getElementById('make');make.onclick=async()=>{make.disabled=true;status.textContent='Consultando versão atual do GitHub...';try{const r=await fetch(REPO_URL+'?nocache='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('GitHub respondeu '+r.status);download(await r.text());}catch(err){status.textContent='⚠️ '+err.message+' — você também pode selecionar o index.html atual no campo abaixo.';}finally{make.disabled=false;}};
+document.getElementById('local').onclick=async()=>{const f=document.getElementById('file').files[0];if(!f){status.textContent='Escolha primeiro um arquivo index.html.';return;}try{download(await f.text());}catch(e){status.textContent='⚠️ '+e.message;}};
+</script></body></html>
