@@ -380,5 +380,16 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<!-- INICIO CORRECAO VISUAL CONCEPT V5.2 -->
+<style id="concept-v52-mobile-patch">
+/* Somente os novos botões V5: na tela pequena ficam lado a lado, sem sobrepor controles antigos. */
+@media(max-width:480px){
+ #ci-open,#lc5-open{bottom:max(9px,env(safe-area-inset-bottom))!important;min-height:42px!important;max-width:calc(50vw - 12px)!important;box-sizing:border-box!important;padding:9px 8px!important;font-size:11px!important;line-height:1.2!important;text-align:center!important;justify-content:center!important;white-space:normal!important}
+ #ci-open{left:8px!important;right:auto!important}
+ #lc5-open{left:auto!important;right:8px!important}
+}
+</style>
+<script defer src="./conteudo-integral.js?v=52-mobile-20261015"></script>
+<!-- FIM CORRECAO VISUAL CONCEPT V5.2 -->
 </body>
 </html>

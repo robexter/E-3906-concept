@@ -1,4 +1,4 @@
-const CACHE_NAME = 'e3906-concept-v4-cic-refino';
+const CACHE_NAME = 'e3906-concept-v4-cic-refino-concept-v5-52-mobile-20261015';
 const APP_SHELL = [
   './',
   './index.html',
